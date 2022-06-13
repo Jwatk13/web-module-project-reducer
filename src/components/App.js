@@ -4,6 +4,7 @@ import reducer, { initialState } from '../reducers/index';
 // import { addOne }  from '../actions/index';
 import { applyNumber } from '../actions/index';
 import { changeOperation } from '../actions/index';
+import { clearDisplay } from '../actions/index';
 
 import './App.css';
 
@@ -24,6 +25,10 @@ function App() {
 
   const handleOperatorType = (operator) => {
     dispatch(changeOperation(operator))
+  }
+
+  const handleClearDisplay = () => {
+    dispatch(clearDisplay())
   }
 
   return (
@@ -74,7 +79,7 @@ function App() {
             </div>
 
             <div className="row ce_button">
-              <CalcButton value={"CE"}/>
+              <CalcButton value={"CE"} onClick={handleClearDisplay}/>
             </div>
 
           </form>
