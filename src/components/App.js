@@ -7,7 +7,7 @@ import { changeOperation } from '../actions/index';
 import { clearDisplay } from '../actions/index';
 import { currentMemory } from '../actions/index';
 import { memoryReturn } from '../actions/index';
-
+import { memoryClear } from '../actions/index';
 import './App.css';
 
 import TotalDisplay from './TotalDisplay';
@@ -41,6 +41,10 @@ function App() {
     dispatch(memoryReturn(memory))
   }
 
+  const handleMemoryClear = () => {
+    dispatch(memoryClear())
+  }
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -61,7 +65,7 @@ function App() {
             <div className="row">
               <CalcButton value={"M+"} onClick={handleMemory}/>
               <CalcButton value={"MR"} onClick={() => handleMemoryReturn(state.memory)}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton value={"MC"} onClick={handleMemoryClear}/>
             </div>
 
             <div className="row">
