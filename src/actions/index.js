@@ -3,6 +3,7 @@ export const CLEAR_DISPLAY = "CLEAR_DISPLAY";
 export const APPLY_NUMBER = "APPLY_NUMBER";
 export const CHANGE_OPERATION = "CHANGE_OPERATION";
 export const CURRENT_MEMORY = "CURRENT_MEMORY";
+export const MEMORY_RETURN = "MEMORY_RETURN";
 
 export const addOne = () => {
     return({type:ADD_ONE});
@@ -22,4 +23,8 @@ export const clearDisplay = () => {
 
 export const currentMemory = () => {
     return ({ type: CURRENT_MEMORY });
+}
+
+export const memoryReturn = (memory) => {
+    return ({ type: MEMORY_RETURN, payload: memory})
 }

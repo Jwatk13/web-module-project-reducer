@@ -6,6 +6,7 @@ import { applyNumber } from '../actions/index';
 import { changeOperation } from '../actions/index';
 import { clearDisplay } from '../actions/index';
 import { currentMemory } from '../actions/index';
+import { memoryReturn } from '../actions/index';
 
 import './App.css';
 
@@ -36,6 +37,10 @@ function App() {
     dispatch(currentMemory())
   }
 
+  const handleMemoryReturn = (memory) => {
+    dispatch(memoryReturn(memory))
+  }
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -55,7 +60,7 @@ function App() {
             
             <div className="row">
               <CalcButton value={"M+"} onClick={handleMemory}/>
-              <CalcButton value={"MR"}/>
+              <CalcButton value={"MR"} onClick={() => handleMemoryReturn(state.memory)}/>
               <CalcButton value={"MC"}/>
             </div>
 
